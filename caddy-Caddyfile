@@ -1,0 +1,18 @@
+cf.domain.com {
+	tls ihciah@gmail.com
+	tls {
+        	dns cloudflare aaaaaaaa
+    	}
+	reverse_proxy /path localhost:10086 {
+		header_up -Origin
+	}
+}
+
+original.domain.com {
+	tls ihciah@gmail.com
+	tls {
+		dns cloudflare aaaaaaaa
+	}
+	root * /var/www/html
+	file_server
+}

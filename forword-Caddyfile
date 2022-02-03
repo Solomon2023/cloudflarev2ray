@@ -1,0 +1,10 @@
+domain2.com:4431 {
+	tls ihciah@gmail.com
+	tls {
+        	dns cloudflare aaaaaaaaa
+    	}
+	reverse_proxy /path https://domain.com:443 {
+		header_up Host domain.com
+		header_up -Origin
+	}
+}
